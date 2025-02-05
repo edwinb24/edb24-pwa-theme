@@ -1,10 +1,10 @@
-let gulp = require('gulp')
-let sass = require('gulp-sass')
-let babel = require('gulp-babel')
-let uglify = require('gulp-uglify-es').default
-let autoprefixer = require('gulp-autoprefixer')
-let cleanCSS = require('gulp-clean-css')
-let browserSync = require('browser-sync').create()
+import browserSync from 'browser-sync'
+import gulp from 'gulp'
+import autoprefixer from 'gulp-autoprefixer'
+import babel from 'gulp-babel'
+import cleanCSS from 'gulp-clean-css'
+import uglify from 'gulp-uglify-es'
+import * as sass from 'sass'
 
 //Compile SCSS into CSS
 function style() {
@@ -35,7 +35,7 @@ function script() {
 
 function watch() {
     browserSync.init({
-        proxy: 'http://local.brocedesigns.com/',
+        proxy: 'http://localhost/edwinbroce/',
         browser: 'chrome.exe',
         files: [
             {
@@ -55,5 +55,5 @@ function watch() {
     gulp.watch('./**/*.html').on('change', browserSync.reload)
 }
 
-exports.style = style
-exports.watch = watch
+gulp.task(style)
+gulp.task(watch)
