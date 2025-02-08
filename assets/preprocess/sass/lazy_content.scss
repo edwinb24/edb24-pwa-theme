@@ -1,4 +1,4 @@
-@use "sass:color";
+@use 'sass:color';
 :root {
     --main-color: #3d796f;
     --secundary-color: #001f52;
@@ -143,6 +143,8 @@
 
 .logo:hover {
     color: #ffd27d;
+    -webkit-transition: color 1s; /* For Safari 3.0 to 6.0 */
+    transition: color 1s; /* For modern browsers */
 }
 a:focus {
     border: 3px solid #ff9244;
@@ -266,7 +268,10 @@ nav.social_media a:hover {
     #menu-main-menu li:before {
         content: '';
         width: calc(100% + 5px) !important;
-        background-image: linear-gradient(orange, color.adjust(orange, $lightness: -5%));
+        background-image: linear-gradient(
+            orange,
+            color.adjust(orange, $lightness: -5%)
+        );
         left: -5px !important;
         opacity: 1 !important;
     }

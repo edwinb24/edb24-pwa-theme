@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 :root {
     --scenePerspective: 1;
     --scenePerspectiveOriginX: 50;
@@ -115,7 +115,7 @@
         will-change: transform;
     }
     .job_list_page .jobs {
-        font-family: Montserrat;
+        font-family: 'Montserrat';
         transform-style: preserve-3d;
         position: absolute;
         font-weight: 600;
@@ -259,7 +259,7 @@
 @include notAsModernBrowsers {
     body {
         background-image: linear-gradient(to bottom, #1e4470 0%, #185281 100%);
-        font-family: Montserrat;
+        font-family: 'Montserrat';
     }
     .viewport {
         background-image: radial-gradient(

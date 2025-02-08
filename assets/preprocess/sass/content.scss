@@ -4,6 +4,13 @@
     --font-color: #b8daff;
     --secundary-font-color: #85c69b;
     --top-menu-height: 235px;
+    --experimental-font-color: #ececec;
+    --content-background: radial-gradient(
+            ellipse at center,
+            rgba(24, 34, 41, 0.95) 26%,
+            rgba(24, 34, 41, 0.95) 100%
+        ),
+        url(https://edwinbroce.com/wp-content/uploads/2025/01/noise.svg);
 }
 
 //Montserrat Font Face
@@ -151,23 +158,26 @@
 }
 
 .logo {
-    font-family: 'Orbitron';
-    font-size: calc(28px + (36 - 28) * ((100vw - 300px) / (1600 - 1000)));
+    font-family: 'Montserrat';
     font-weight: 600;
+    font-size: calc(32px + (36 - 28) * ((100vw - 300px) / (1600 - 1000)));
     grid-area: logo;
-    color: #d5d5d5; // Houdini - Progressive Enhancement Support
+    color: var(--secundary-font-color);
 }
 
 .header_navigation {
     grid-area: header_menu;
-    font-family: Montserrat;
-    font-weight: 700;
+    font-family: Caviar;
+    font-weight: 600;
     display: grid;
     justify-self: end;
     grid-template-areas: 'main_menu social_media_menu';
 }
 
 .menu_main_menu_wrapper {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 2em;
     display: flex;
     align-items: center;
     margin-right: 25px;
