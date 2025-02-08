@@ -19,7 +19,7 @@ gulp.task('script', function () {
 gulp.task('sass', function () {
     return gulp
         .src([
-            '!./assets/preprocess/sass/**/home.scss',
+            './assets/preprocess/sass/**/home.scss',
             './assets/preprocess/sass/**/*.scss',
         ])
         .pipe(sass().on('error', sass.logError))

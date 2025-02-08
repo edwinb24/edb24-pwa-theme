@@ -92,7 +92,7 @@
 }
 
 //Caviar Dream Font Face
-@media screen and (max-width: 1250px) and (min-width: 700px) {
+@media screen and (max-width: 2000px) and (min-width: 700px) {
     @font-face {
         font-family: 'Caviar';
         src: url('https://ik.imagekit.io/edwinb24/fonts/caviardreams-webfont_jM7eYBLUB.woff2')
@@ -183,7 +183,7 @@ a:focus {
     .description {
         font-family: 'Montserrat';
     }
-    @media screen and (min-width: 1251px) {
+    @media screen and (min-width: 2001px) {
         .name {
             text-shadow: 7px 8px 3px rgba(0, 0, 0, 0.3);
         }
@@ -247,7 +247,7 @@ a:focus {
             }
         }
     }
-    @media screen and (max-width: 1250px) and (min-width: 700px) {
+    @media screen and (max-width: 2000px) and (min-width: 700px) {
         .name {
             font-family: 'Caviar';
             text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
@@ -453,7 +453,7 @@ a:focus {
         }
     }
 
-    @media (orientation: landscape) and (min-width: 700px) and (max-width: 1200px) {
+    @media (orientation: landscape) and (min-width: 700px) and (max-width: 1950px) {
         .description {
             display: none;
         }

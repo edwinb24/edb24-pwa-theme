@@ -20,9 +20,6 @@
 	</h1>
 	<div class="home_picture lazy_loaded_image" style='background-image: url("<?php echo $GLOBALS[ 'img_path']; ?>2020/01/home_page_photo.jpg?tr=w-20,h-20 ")'>
 	</div>
-	<p class="description">
-		I am always looking for something new to learn and the opportunity to share my love for coding with others. I also love playing videogames, D&D, and teaching my cat to do tricks!
-	</p>
 </div>
 <?php get_footer(); ?>
 

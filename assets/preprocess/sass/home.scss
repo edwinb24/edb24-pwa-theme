@@ -57,7 +57,7 @@ body {
         justify-self: center;
     }
 
-    @media screen and (min-width: 1251px) {
+    @media screen and (min-width: 2001px) {
         .home_page_wrapper {
             background: linear-gradient(
                 135deg,
@@ -129,7 +129,7 @@ body {
         }
     }
 
-    @media screen and (max-width: 1250px) and (min-width: 700px) {
+    @media screen and (max-width: 2001px) and (min-width: 700px) {
         .home_page_wrapper {
             background: #e5e5e5;
             z-index: -1;
@@ -362,7 +362,7 @@ body {
         }
     }
 
-    @media (orientation: landscape) and (min-width: 700px) and (max-width: 1200px) {
+    @media (orientation: landscape) and (min-width: 700px) and (max-width: 2000px) {
         .description {
             display: none;
         }
