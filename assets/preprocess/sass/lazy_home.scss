@@ -132,7 +132,11 @@
         font-style: italic;
     }
 }
-
+@media (min-width: 700px) {
+    .description {
+        display: none;
+    }
+}
 $cut_corner: 10;
 
 :root {
@@ -187,10 +191,6 @@ a:focus {
         .name {
             text-shadow: 7px 8px 3px rgba(0, 0, 0, 0.3);
         }
-        .description {
-            text-shadow: 7px 8px 3px rgba(0, 0, 0, 0.3);
-        }
-
         .social_media img {
             filter: contrast(1.4) drop-shadow(7px 8px 3px rgba(0, 0, 0, 0.3));
         }
@@ -450,12 +450,6 @@ a:focus {
         }
         .description {
             --description_custom_corner: 15px;
-        }
-    }
-
-    @media (orientation: landscape) and (min-width: 700px) and (max-width: 1950px) {
-        .description {
-            display: none;
         }
     }
 }

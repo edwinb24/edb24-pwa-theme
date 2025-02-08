@@ -98,7 +98,7 @@ body {
             margin-top: 35px;
         }
         nav.social_media {
-            grid-column: 9/11;
+            grid-column: -1/11;
             justify-self: end;
             margin-right: 20px;
         }
@@ -269,7 +269,7 @@ body {
             font-size: calc(
                 21px + (27 - 21) * ((100vw - 1000px) / (1600 - 1000))
             );
-            grid-row: 1/-1;
+            grid-row: 1/18;
             text-align: center;
             align-self: end;
             padding-left: var(--description_custom_corner);
