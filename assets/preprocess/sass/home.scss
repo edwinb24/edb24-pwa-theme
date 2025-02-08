@@ -74,8 +74,9 @@ body {
             grid-row: 1/-1;
         }
         .name_and_intro {
-            grid-column: 7/10;
+            grid-column: 6/12;
             grid-row: 3/5;
+            text-align: center;
         }
 
         .name {
@@ -103,16 +104,16 @@ body {
             margin-right: 20px;
         }
         .main_navigation {
-            grid-column: 7/10;
+            grid-column: 6/12;
             grid-row: 7/8;
-            display: grid;
-            grid-template-columns: repeat(3, 170px);
             text-align: center;
             justify-content: center;
             font-size: calc(
                 16px + (18 - 16) * ((100vw - 1000px) / (1600 - 1000))
             );
-            justify-content: space-evenly;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
         }
         .main_navigation a {
             display: block;
