@@ -37,12 +37,12 @@
 
     //Scrolling Message
     #scrolling_icon {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
         color: #efefef;
         position: fixed;
-        font-weight: 600;
+        font-weight: normal;
         display: none;
         flex-flow: column;
         justify-content: center;
@@ -50,12 +50,12 @@
         margin: auto;
         align-items: center;
         z-index: 1000000;
-        font-family: 'Orbitron';
+        font-family: 'Monserrat';
         top: 0px;
         opacity: 1;
         padding-left: 5vw;
         padding-right: 5vw;
-        transition: top 2s, opacity 0.7s;
+        transition: top 2s, opacity 1.2s;
     }
     .scrolling_message_text {
         font-size: calc(42px + (80 - 42) * ((100vw - 600px) / (1600 - 600)));
@@ -78,31 +78,7 @@
             calc(var(--scenePerspectiveOriginY) * 1%);
         will-change: perspective-origin; //Allows Hardware-Accelerated CSS, so transitions are smoother
         transform: translate3d(0, 0, 0);
-
-        // Stars Background
-        background-color: black;
-        background-image: radial-gradient(
-                rgb(245, 216, 216),
-                rgba(245, 216, 216, 0.2) 2px,
-                transparent 40px
-            ),
-            radial-gradient(
-                rgb(214, 235, 255),
-                rgba(214, 235, 255, 0.15) 1px,
-                transparent 30px
-            ),
-            radial-gradient(
-                rgb(207, 255, 219),
-                rgba(207, 255, 219, 0.1) 2px,
-                transparent 40px
-            ),
-            radial-gradient(
-                rgba(255, 255, 255, 0.4),
-                rgba(255, 255, 255, 0.1) 2px,
-                transparent 30px
-            );
-        background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+        background: var(--content-background);
     }
 
     .job_list_page {
@@ -175,61 +151,10 @@
         right: 10vw;
     }
 
-    .job_list_page .jobs:nth-child(1),
-    .job_list_page .jobs:nth-child(1):before,
-    .job_list_page .jobs:nth-child(1):after {
+    .job_list_page .jobs,
+    .job_list_page .jobs:before,
+    .job_list_page .jobs:after {
         background: linear-gradient(45deg, #ff0057, #e64a19);
-    }
-    .job_list_page .jobs:nth-child(2),
-    .job_list_page .jobs:nth-child(2):before,
-    .job_list_page .jobs:nth-child(2):after {
-        background: linear-gradient(45deg, #6db51a, #00bcd4);
-    }
-    .job_list_page .jobs:nth-child(3),
-    .job_list_page .jobs:nth-child(3):before,
-    .job_list_page .jobs:nth-child(3):after {
-        background: linear-gradient(45deg, #e91e63, #5d02ff);
-    }
-    .job_list_page .jobs:nth-child(4),
-    .job_list_page .jobs:nth-child(4):before,
-    .job_list_page .jobs:nth-child(4):after {
-        background: linear-gradient(45deg, #ff0000, #ffc107);
-    }
-
-    .job_list_page .jobs:nth-child(5),
-    .job_list_page .jobs:nth-child(5):before,
-    .job_list_page .jobs:nth-child(5):after {
-        background: linear-gradient(45deg, #380036, #0cbaba);
-    }
-
-    .job_list_page .jobs:nth-child(6),
-    .job_list_page .jobs:nth-child(6):before,
-    .job_list_page .jobs:nth-child(6):after {
-        background: linear-gradient(45deg, #b91372, #6b0f1a);
-    }
-
-    .job_list_page .jobs:nth-child(7),
-    .job_list_page .jobs:nth-child(7):before,
-    .job_list_page .jobs:nth-child(7):after {
-        background: linear-gradient(45deg, #00c6fb, #005bea);
-    }
-
-    .job_list_page .jobs:nth-child(8),
-    .job_list_page .jobs:nth-child(8):before,
-    .job_list_page .jobs:nth-child(8):after {
-        background: linear-gradient(45deg, #0250c5, #d43f8d);
-    }
-
-    .job_list_page .jobs:nth-child(9),
-    .job_list_page .jobs:nth-child(9):before,
-    .job_list_page .jobs:nth-child(9):after {
-        background: linear-gradient(45deg, #617798, #5d5b5b);
-    }
-
-    .job_list_page .jobs:nth-child(10),
-    .job_list_page .jobs:nth-child(10):before,
-    .job_list_page .jobs:nth-child(10):after {
-        background: linear-gradient(45deg, #16a085, #f4d03f);
     }
 
     @media only screen and (min-width: 600px) {
