@@ -115,17 +115,19 @@
         width: 100%;
         height: 100%;
         border-radius: 10px;
-        filter: blur(20px);
-        transition: filter 1s;
+        filter: blur(0);
+        transition: all 2s;
         z-index: -1;
     }
 
     .job_list_page .jobs:hover {
-        color: #efefef;
+        color: #fbfbfb;
+        filter: brightness(100%);
+        background: linear-gradient(45deg, #071e2c, #071a2c);
     }
     .job_list_page .jobs:hover:before,
     .job_list_page .jobs:hover:after {
-        filter: blur(40px);
+        filter: blur(2px) brightness(100%);
     }
 
     .job_list_page .jobs,
@@ -154,7 +156,8 @@
     .job_list_page .jobs,
     .job_list_page .jobs:before,
     .job_list_page .jobs:after {
-        background: linear-gradient(45deg, #ff0057, #e64a19);
+        background: linear-gradient(45deg, #030d19, #07172c);
+        filter: brightness(92%);
     }
 
     @media only screen and (min-width: 600px) {
