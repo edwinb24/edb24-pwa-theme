@@ -3,20 +3,20 @@
 // make everything come together.
 
 const INITIAL_CAMERA_POSITION = parseFloat(
-    getComputedStyle(document.documentElement).getPropertyValue('--cameraZ')
+    getComputedStyle(document.documentElement).getPropertyValue('--cameraZ'),
 )
 
 //Get initial coordinates and stablish how much the camera will move
 const PERSPECTIVE_ORIGIN = {
     x: parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue(
-            '--scenePerspectiveOriginX'
-        )
+            '--scenePerspectiveOriginX',
+        ),
     ),
     y: parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue(
-            '--scenePerspectiveOriginY'
-        )
+            '--scenePerspectiveOriginY',
+        ),
     ),
     max_gap_desktop: 10,
     max_gap_mobile: 20,
@@ -39,12 +39,12 @@ function MouseCameraMovement(e) {
     const updatedXGap = Math.trunc(
         (((e.clientX - window.innerWidth / 2) * 100) /
             (window.innerWidth / 2)) *
-            -1
+            -1,
     )
     const updatedYGap = Math.trunc(
         (((e.clientY - window.innerHeight / 2) * 100) /
             (window.innerHeight / 2)) *
-            -1
+            -1,
     )
     // Refreshing the screen after movement larger than 2 pixels
     // to improve performance
@@ -67,11 +67,11 @@ function moveCameraAngle(X_GAP, Y_GAP, max_gap) {
 
     document.documentElement.style.setProperty(
         '--scenePerspectiveOriginX',
-        new_perspective_x
+        new_perspective_x,
     )
     document.documentElement.style.setProperty(
         '--scenePerspectiveOriginY',
-        new_perspective_y
+        new_perspective_y,
     )
 }
 
@@ -79,17 +79,17 @@ function setSceneHeight() {
     const list_of_items = document.getElementsByClassName('jobs')
     const number_of_items = list_of_items.length
     const item_z_index = parseFloat(
-        getComputedStyle(document.documentElement).getPropertyValue('--itemZ')
+        getComputedStyle(document.documentElement).getPropertyValue('--itemZ'),
     )
     const perspective = parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue(
-            '--scenePerspective'
-        )
+            '--scenePerspective',
+        ),
     )
     const camera_speed = parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue(
-            '--cameraSpeed'
-        )
+            '--cameraSpeed',
+        ),
     )
     const height =
         window.innerHeight +
@@ -117,6 +117,6 @@ function moveCamera() {
     }
     document.documentElement.style.setProperty(
         '--cameraZ',
-        window.scrollY + INITIAL_CAMERA_POSITION
+        window.scrollY + INITIAL_CAMERA_POSITION,
     )
 }

@@ -22,11 +22,11 @@
 		<p>My career in web development has taken me to small and large companies using back-end and front-end technologies.</p>
 	</div>
 	<div class="content">
-		<?php 
+		<?php
 		$args = array( 'post_type' => 'projects', 'posts_per_page' => 10 );
-		$the_query = new WP_Query( $args ); 
+		$the_query = new WP_Query( $args );
 		?>
-		<?php 
+		<?php
 		$i = 1;
 		$item = "project_";
 		if( $the_query->have_posts() ):
@@ -36,7 +36,7 @@
 				$main_image = returnURL($main_image);
 				$hover_image = returnURL($hover_image);
 
-				$project_class = $item . $i; 
+				$project_class = $item . $i;
 				$i++; ?>
 				<a href="<?php the_permalink() ?>"><article id="page-<?php print(strtolower(str_replace(' ', '-', get_the_title()))); ?>" <?php post_class($project_class); ?>>
 					<?php the_title('<h1 class="entry-title">','</h1>' ); ?>
@@ -54,14 +54,14 @@
 						</ul>
 						<picture class="hover_image project_image">
 							<img src="<?php echo $hover_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>">
-						</picture> 
+						</picture>
 						<picture class="main_image project_image">
 							<img src="<?php echo $main_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>">
-						</picture> 
+						</picture>
 					</div>
 				</article></a>
-			<?php endwhile;	
-		endif;		
+			<?php endwhile;
+		endif;
 		?>
 	</div>
 </div>
