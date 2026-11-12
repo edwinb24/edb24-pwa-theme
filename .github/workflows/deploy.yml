@@ -45,10 +45,19 @@ jobs:
               run: |
                   mkdir -p ~/.ssh
                   chmod 700 ~/.ssh
-                  printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+                  # Strip Windows line endings, which OpenSSH rejects.
+                  printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/deploy_key
                   chmod 600 ~/.ssh/deploy_key
-                  printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+                  printf '%s\n' "$SSH_KNOWN_HOSTS" | tr -d '\r' > ~/.ssh/known_hosts
                   chmod 644 ~/.ssh/known_hosts
+                  # Fail early with a clear message if the key can't be read.
+                  # The fingerprint is safe to print; compare it with
+                  # `ssh-keygen -lf <key>.pub` on the machine that made the key.
+                  if ! ssh-keygen -y -f ~/.ssh/deploy_key > /tmp/deploy_key.pub 2>/dev/null; then
+                    echo "::error::SSH_PRIVATE_KEY is not a valid private key. Paste the whole private key file (BEGIN/END lines included), not the .pub file."
+                    exit 1
+                  fi
+                  echo "Deploy key fingerprint: $(ssh-keygen -lf /tmp/deploy_key.pub)"
 
             - name: Upload the theme
               env:
