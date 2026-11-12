@@ -14,6 +14,13 @@ function acme_theme_setup() {
 
 add_action('init', 'acme_theme_setup');
 
+/* Let WordPress (and SEO plugins) output the <title> tag in wp_head(). */
+function edb24_title_tag_support() {
+	add_theme_support('title-tag');
+}
+
+add_action('after_setup_theme', 'edb24_title_tag_support');
+
 /*
  ======================================
  Adding Custom Post Type

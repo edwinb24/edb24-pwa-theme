@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<title>Edwin Broce's Website</title>
 <div class="home_page_wrapper">
 	<nav class="social_media" aria-label="Social Media Navigation">
 		<a href="https://www.facebook.com/edwin.b24" target="_blank"  rel="nofollow noreferrer"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-facebook-f-50_f5jaI8SnuZ.png" alt="Go to My Facebook"></a>
