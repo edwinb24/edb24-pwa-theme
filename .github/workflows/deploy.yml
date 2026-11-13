@@ -65,9 +65,15 @@ jobs:
                   SSH_USER: ${{ secrets.SSH_USER }}
                   SSH_PORT: ${{ secrets.SSH_PORT || '22' }}
               run: |
-                  rsync -az --delete \
+                  # Build files and Sass sources stay out of the public theme folder.
+                  # --delete-excluded also removes them from earlier uploads, so the
+                  # install step drops them from the live theme too.
+                  rsync -az --delete --delete-excluded \
                     --exclude '.git/' --exclude '.github/' \
                     --exclude 'deploy/' --exclude 'node_modules/' \
+                    --exclude '/package.json' --exclude '/package-lock.json' \
+                    --exclude '/gulpfile.js' --exclude '/.gitignore' --exclude '/.gitattributes' \
+                    --exclude '/assets/preprocess/sass/' \
                     -e "ssh -i $HOME/.ssh/deploy_key -p $SSH_PORT -o StrictHostKeyChecking=yes" \
                     ./ "$SSH_USER@$SSH_HOST:releases/edb24-pwa-theme/"
 

@@ -12,6 +12,8 @@ Pushing to `main` deploys the theme automatically. The GitHub Actions workflow i
 
 The workflow never runs gulp. Build the CSS and JS locally and commit the output before pushing.
 
+The deploy leaves out the build files (`package.json`, `package-lock.json`, `gulpfile.js`, `.gitignore`, `.gitattributes`) and the Sass sources (`assets/preprocess/sass/`), because everything in the theme folder can be downloaded from the website. `assets/preprocess/scripts/` is deployed, because the home page loads `custom_corner.js` from there directly.
+
 Changes to `README.md`, `LICENSE.md`, `.gitignore` or `deploy/` alone don't start a deploy.
 
 ### Running the deploy again without a new commit
@@ -30,7 +32,10 @@ git archive main | ssh edwinbroce-droplet \
   "rm -rf /tmp/edb24-pwa-theme && mkdir /tmp/edb24-pwa-theme && tar -x -C /tmp/edb24-pwa-theme"
 
 # 2. Move it into the release folder and install it with the same script the workflow uses.
-ssh -t edwinbroce-droplet "sudo rsync -a --delete --exclude '.github/' --exclude 'deploy/' \
+ssh -t edwinbroce-droplet "sudo rsync -a --delete --delete-excluded \
+    --exclude '.github/' --exclude 'deploy/' \
+    --exclude '/package.json' --exclude '/package-lock.json' --exclude '/gulpfile.js' \
+    --exclude '/.gitignore' --exclude '/.gitattributes' --exclude '/assets/preprocess/sass/' \
     /tmp/edb24-pwa-theme/ /home/deployer/releases/edb24-pwa-theme/ \
   && sudo chown -R deployer:deployer /home/deployer/releases/edb24-pwa-theme \
   && sudo /usr/local/sbin/deploy-edb24-theme \
