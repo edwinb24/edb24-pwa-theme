@@ -5,7 +5,7 @@ name: Deploy theme to production
 
 on:
     push:
-        branches: [main]
+        branches: [prod]
         paths-ignore:
             - 'README.md'
             - 'LICENSE.md'
@@ -22,6 +22,7 @@ permissions:
 
 jobs:
     deploy:
+        if: github.ref == 'refs/heads/prod'
         runs-on: ubuntu-latest
         steps:
             - name: Check out the repository
